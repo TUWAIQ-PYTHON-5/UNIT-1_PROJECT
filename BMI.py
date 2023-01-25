@@ -8,6 +8,7 @@ print(Style.RESET_ALL)
 
 
 
+
 class BMI_calculatre:
     def __init__(self, name: str, weight : int, height : int):
         self.name = name
@@ -70,4 +71,10 @@ while True:
         break
     else:
         print("invalid input. please enter y or n.")
+
+
+
+
+
+
 
