@@ -8,16 +8,6 @@ here you can make user class if there is time
 class Users:
     user1 = 0
     userID = 0
-    # #user1
-    # def set_user1(self, user1):
-    #     self.user1 = user1
-    # def get_user1(self):
-    #     return self.user1
-    # #userID
-    # def set_userID(self, userID):
-    #     self.userID = userID
-    # def get_userID(self):
-    #     return self.userID
     #user1
     def set_user1(user1):
         Users.user1 = user1
