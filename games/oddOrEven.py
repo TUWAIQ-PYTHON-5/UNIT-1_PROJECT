@@ -11,7 +11,8 @@ def startGame():
         tprint(f"If you want to quite press 0.",font="fancy95")
         while True:
             try:
-                userChoice = int(input("Please choose 1.Odd or 2.Even.\nWrite 1 or 2: "))
+                artInput = text2art("Please choose 1.Odd or 2.Even.\nWrite 1 or 2: ",font="soft" )
+                userChoice = int(input(artInput))
             except ValueError:
                 print("Please write a Number.")
             else:

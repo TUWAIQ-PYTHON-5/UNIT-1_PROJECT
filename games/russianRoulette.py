@@ -11,12 +11,14 @@ def gameInfo():
 def startGame():
     while True:
         tprint(f"If you want to quite press 0.",font="fancy95")
-        number = int(input("How many tries do you want? "))
+        artInput = text2art("How many tries do you want? ",font="soft" )
+        number = int(input(artInput))
         points = number
         if number == 0:
             break
         while number != 0:
-            predection = int(input("Choose a bullet: 1,2,3,4,5,6? "))
+            artInput = text2art("Choose a bullet: 1,2,3,4,5,6? ",font="soft" )
+            predection = int(input(artInput))
             shot = randrange(6) + 1
             if predection > 6 or predection < 1:
                 print("Wrong Bullet")

@@ -18,7 +18,8 @@ def display_board():
 
 def players():
     tprint("Select Player - X or O",font="big")
-    p1 = input("Player1: ").upper()
+    artInput = text2art("Player1: ",font="star25" )
+    p1 = input(artInput).upper()
     p2 = ""
     if p1 == "X":
         p2 = "O"
@@ -33,12 +34,14 @@ def players():
 def player_position():
     global current_player
     tprint("Current Player: " + current_player,font="big")
-    position = input("Choose position from 1 - 9: ")
+    artInput = text2art("Choose position from 1 - 9: ",font="soft" )
+    position = input(artInput)
 
     valid = False
     while not valid:
         while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-          position = input("Choose position from 1 - 9: ")
+            artInput = text2art("Choose position from 1 - 9: ",font="soft" )
+            position = input(artInput)
         position = int(position) - 1
 
         if board[position] == "-":
@@ -66,39 +69,46 @@ def startGame():
             elif board[3] == board[4] == board[5] != "-":
                 game_on = False
                 point = 1
+                return 1
                 tprint("\nCongratulations " + board[3]+" you WON!",font="big",decoration="star23")
             elif board[6] == board[7] == board[8] != "-":
                 game_on = False
                 point = 1
+                return 1
                 tprint("\nCongratulations " + board[6]+" you WON!",font="big",decoration="star23")
              #Check columns if there is a win
             elif board[0] == board[3] == board[6] != "-":
                 game_on = False
                 point = 1
+                return 1
                 tprint("\nCongratulations " + board[0]+" you WON!",font="big",decoration="star23")
             elif board[1] == board[4] == board[7] != "-":
                 game_on = False
                 point = 1
+                return 1
                 tprint("\nCongratulations " + board[1]+" you WON!",font="big",decoration="star23")
             elif board[2] == board[5] == board[8] != "-":
                 game_on = False
                 point = 1
+                return 1
                 tprint("\nCongratulations " + board[2]+" you WON!",font="big",decoration="star23")
              #Check diagonals if there is a win
             elif board[0] == board[4] == board[8] != "-":
                 game_on = False
                 point = 1
+                return 1
                 tprint("\nCongratulations " + board[0]+" you WON!",font="big",decoration="star23")
             elif board[2] == board[4] == board[6] != "-":
                 game_on = False
                 point = 1
+                return 1
                 tprint("\nCongratulations "+ board[6]+" you WON!",font="big",decoration="star23")
              #Check if it's a tie
             elif "-" not in board:
                 game_on = False
                 point = 0
                 tprint("\nIt's a Tie",font="big",decoration="star23")
-                exit()
+                return 0
             Users.addPoints(Users.get_userID(),point)    
 
         def flip_player():
@@ -108,4 +118,8 @@ def startGame():
             else:
                 current_player = "X"
         flip_player()
-        check_winner()
+        if check_winner() == 0:
+            break
+        else:
+            continue
+        
