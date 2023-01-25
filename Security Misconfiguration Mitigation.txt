@@ -1,0 +1,4 @@
+Here are some  ways to minimize security misconfiguration: 
+1.The production, development, and QA environments must all be configured in the same way, but with distinct passwords used in every environment. 
+2.Install patches and software updates regularly and in a timely way in every environment.
+3.install or remove unused features or insecure frameworks. 

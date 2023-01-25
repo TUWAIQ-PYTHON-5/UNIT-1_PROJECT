@@ -1,0 +1,4 @@
+Here is a checklist to prevent broken access control:
+1-Never use obfuscation as the sole method of access control.
+2-Specify the degree of access permitted for each resource at the code level, denying all access by default.
+3-Deny access by default if a resource isn't meant to be shared with the general public.

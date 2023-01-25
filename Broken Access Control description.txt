@@ -1,0 +1,3 @@
+Description:
+broken access control vulnerability is a type of security flaw that allows an unauthorized user access to restricted resources.
+By exploiting this vulnerability, attackers can circumvent standard security procedures and gain unauthorized access to sensitive information or systems. 

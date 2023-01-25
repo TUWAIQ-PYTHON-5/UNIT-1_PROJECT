@@ -1,0 +1,6 @@
+There are multiple methods for preventing identification and authentication failures.
+1.Requiring Strong Passwords
+2.Securing the Logout/Login Function
+3.Securing Password Resets
+4.Multi-Factor Authentication
+5.Multi-Step Login Processes 

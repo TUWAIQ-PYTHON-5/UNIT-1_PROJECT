@@ -1,0 +1,4 @@
+Description:
+
+Security misconfigurations are security controls that are inaccurately configured or left insecure, 
+putting your systems and data at risk. Basically, any poorly documented configuration changes, default settings, or a technical issue across any component in your endpoints could lead to a misconfiguration.

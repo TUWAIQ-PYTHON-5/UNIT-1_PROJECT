@@ -11,33 +11,27 @@
 - Use some form of Error Handling .
 - Organize Your Code into modules & (or packages)
 
-## Example Project :  An online Grocery Store :
+### Project Name: Security  Vulnerabilities 
 
-#### Overview : An online store that sells fruits to customers. This online store has 2 main users. The customer and the manager of the store . Each one of them should be able to do the following tasks for the store to function properly . 
+## Overview : Program that keeps you protected by knowing the vulnerabilities in systems and how to protect yourself from them.
 
-#### As a customer I should be able to do the following :
-- Browse  Products . 
-- View the product info (summary, specs, price, quantity , etc.)
-- Search for Products.
-- Get recommendations for my next purchase based on my purchase history.
-- Add Products to the shopping cart .
-- Remove a product from the shopping cart.
-- List the products in my shopping cart. 
-- Continue to checkout . 
-- Fill in my address for delivery.
-- Get receipt of my purchases.
-- Check delivery status . 
+### user stories:
+ # As a user I should be able to do the following:
+ - Fill in first and last name
+ - View vulnerabilities description.
+ - View vulnerabilities mitigation.
+ - view the percentage of satisfaction
 
 
-
-#### Usage :
- Explain to the user how to use your project . 
- for example:
- - type in search product_name to search for a product.
- - type in list_products to show all the products in the grocery.
- - type in show product_name to get information about this product.
- - type in buy product_name to buy the product . 
- - and so on...
+## Usage:
+- Type your first and last name 
+- Choose the vulnerability number from the menu
+- Choose number 1 to describe the vulnerability
+- OR choose number 2 to mitigate the vulnerability
+- OR choose number 3 to Exit
+- Enter the number of how satisfied you are with our program
 
 
-### For your project. Edit this README.md file to include your own project name,  overview, user stories, and usage. 
+
+
+ 
