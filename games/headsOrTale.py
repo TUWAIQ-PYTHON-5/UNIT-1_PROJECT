@@ -1,10 +1,13 @@
 import random
 from art import *
+from users import Users
+
 
 
 
 def gameInfo():
     tprint("Coin flipping, coin tossing, or heads or tails is\nthe practice of throwing a coin in the air and checking \nwhich side is showing when it lands, in order to choose\n between two alternatives, heads or tails.",font="fancy95")
+    return
 
 def startGame():
     while True:
@@ -31,5 +34,6 @@ def startGame():
         tprint(f"It's {tossResult}",font="fancy95")
         if userChoice == tossResult:
             tprint("\nYOU WON",font="big",decoration="star25")
+            Users.addPoints(Users.get_userID(),1)
         else:
             tprint("\nBETTER LUCK\nNEXT TIME",font="big",decoration="star25")

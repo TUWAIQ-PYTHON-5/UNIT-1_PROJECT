@@ -1,4 +1,5 @@
 from art import *
+from users import Users
 
 
 
@@ -8,7 +9,7 @@ game_on = True
 current_player = "X"
 
 def gameInfo():
-    tprint("Tic Tac Toe is a game in which two players seek in alternate turns to complete a row, a column, or a diagonal with either three O's or three X's drawn in the spaces of a grid of nine squares; noughts and crosses.",font="fancy95")
+    tprint("Tic Tac Toe is a game in which two players seek in\nalternate turns to complete a row, a column, or a\ndiagonal with either three O's or three X's drawn in\nthe spaces of a grid of\nnine squares; noughts and crosses.",font="fancy95")
 
 def display_board():
     tprint(board[6] + " | " + board[7] + " | " + board[8] + "      " + "7|8|9",font="big")
@@ -57,38 +58,48 @@ def startGame():
         
         def check_winner():
             global game_on
+            point = 0
             #Check rows if there is a win 
             if board[0] == board[1] == board[2] != "-":
                 game_on = False
                 tprint("\nCongratulations " + board[0]+" you WON!",font="big",decoration="star23")
             elif board[3] == board[4] == board[5] != "-":
                 game_on = False
+                point = 1
                 tprint("\nCongratulations " + board[3]+" you WON!",font="big",decoration="star23")
             elif board[6] == board[7] == board[8] != "-":
                 game_on = False
+                point = 1
                 tprint("\nCongratulations " + board[6]+" you WON!",font="big",decoration="star23")
              #Check columns if there is a win
             elif board[0] == board[3] == board[6] != "-":
                 game_on = False
+                point = 1
                 tprint("\nCongratulations " + board[0]+" you WON!",font="big",decoration="star23")
             elif board[1] == board[4] == board[7] != "-":
                 game_on = False
+                point = 1
                 tprint("\nCongratulations " + board[1]+" you WON!",font="big",decoration="star23")
             elif board[2] == board[5] == board[8] != "-":
                 game_on = False
+                point = 1
                 tprint("\nCongratulations " + board[2]+" you WON!",font="big",decoration="star23")
              #Check diagonals if there is a win
             elif board[0] == board[4] == board[8] != "-":
                 game_on = False
+                point = 1
                 tprint("\nCongratulations " + board[0]+" you WON!",font="big",decoration="star23")
             elif board[2] == board[4] == board[6] != "-":
                 game_on = False
+                point = 1
                 tprint("\nCongratulations "+ board[6]+" you WON!",font="big",decoration="star23")
              #Check if it's a tie
             elif "-" not in board:
                 game_on = False
+                point = 0
                 tprint("\nIt's a Tie",font="big",decoration="star23")
                 exit()
+            Users.addPoints(Users.get_userID(),point)    
 
         def flip_player():
             global current_player

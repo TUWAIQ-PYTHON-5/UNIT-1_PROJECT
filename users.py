@@ -5,26 +5,50 @@ from art import *
 '''
 here you can make user class if there is time
 '''
-def user(id):
-    if id =="1":
-        tprint("You are logged in.",font="fancy95")
-        return 1
-    elif id == 2:
-        tprint("No points are recorded",font="fancy95")
-        return 0
+class Users:
+    user1 = 0
+    userID = 0
+    # #user1
+    # def set_user1(self, user1):
+    #     self.user1 = user1
+    # def get_user1(self):
+    #     return self.user1
+    # #userID
+    # def set_userID(self, userID):
+    #     self.userID = userID
+    # def get_userID(self):
+    #     return self.userID
+    #user1
+    def set_user1(user1):
+        Users.user1 = user1
+    def get_user1():
+        return Users.user1
+    #userID
+    def set_userID(userID):
+        Users.userID = userID
+    def get_userID():
+        return Users.userID
 
-def showPoints(id):
-    if id == 1:
-        print(f"{user1} points")
-    else:
-        return
+    def user(id):
+        if id ==1:
+            tprint("You are logged in.",font="fancy95")
+            Users.set_userID(id)
+            return 1
+        elif id == 2:
+            tprint("No points are recorded",font="fancy95")
+            return 0
 
-def addPoints(id,points):
-    if id == 1:
-        user1 = addingPoints(points,user1)
-    else:
-        return
+    def showPoints(id):
+        if id == 1:
+            return Users.get_user1()
+        else:
+            return
 
-addingPoints = lambda x , y : x+y
-user1 = int
-user("1")
+    def addPoints(id,points):
+        addingPoints = lambda x , y : x+y
+        if id == 1:
+            oldScore = Users.get_user1()
+            newScore = addingPoints(points,oldScore)
+            Users.set_user1(newScore)
+        else:
+            return
