@@ -33,22 +33,17 @@ greeting()
 #_______________________________________________
 
 while True:
-    user_answer=input("Would you Like to Play TicTacToe with me ? if your answer is yes , you can choose your player (X,O) or exit to end ." )
-    if user_answer.lower() == "X" and "O":
+    user_answer=input("Hello, if you want to Play TicTacToe with me , please choose your player (X|O) or exit to end : " )
+    if user_answer.lower() == 'x':
         from TicTacToe import start_new_game 
         break
-    elif user_answer.lower() == 'exit' :
+    if user_answer.lower() == 'o':
+        from TicTacToe import start_new_game 
+        break
+    elif user_answer.lower() == 'exit':
         print(Fore.RED + "Ohh that's bad 😥 , nice to know you tho !!", emoji.emojize(":handshake:"))
         break
     else:
-        print('Please enter a valid input ! ')
+        print('Type Y/N')
 
-
-    
 #_______________________________________________
-
-
-
-
-
-
