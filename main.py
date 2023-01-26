@@ -2,11 +2,11 @@
 # coding: utf-8
 
 # In[ ]:
-
-
+import art 
+from colorama import Fore, Back, Style
 from mobile_price import MobilePrice
 import sys
-print ("WELCOME IN OUR PREDICTION PROGRAM <3,WANT TO KNOW THE PRICE OF YOUR MOBILE? PLEASE ENTER YOUR MOBILE SPECIFICATIONS :) ")
+print (Fore.GREEN + Style.BRIGHT +"WELCOME IN OUR PREDICTION PROGRAM <3,WANT TO KNOW THE PRICE OF YOUR MOBILE? PLEASE ENTER YOUR MOBILE SPECIFICATIONS :) ")
 
 def question(text,fun=int):
     try:
