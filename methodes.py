@@ -90,7 +90,7 @@ def fourth_quarter_sales() : # fourth quarter sales
         fourth_quarter_sales.append(sum)
     return fourth_quarter_sales
 
-add_numbers = lambda x , y : x+y #Lambda function.
+add_numbers = lambda x , y : x+y #lambda function
 
 def first_half_sales():
     first_half = []
