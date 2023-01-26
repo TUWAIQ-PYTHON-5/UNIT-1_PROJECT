@@ -1,7 +1,7 @@
 from art import *
 from colorama import Fore, Back, Style
 
-
+tprint("welcome to my project :)",font="random")
 tprint("BMI",font="random")
 print(Back.BLUE + 'is an estimate of body fat that is based on your weight and height.This calculation helps determine whether you are underweight, at a healthy weight, overweight, or obese.')
 print(Style.RESET_ALL)
@@ -14,6 +14,23 @@ class BMI_calculatre:
         self.name = name
         self.weight = weight
         self.height = height
+
+    def set_name(self,name):
+        self.name = name 
+    def get_name(self):
+        return self.get_name
+
+    def set_weight(self,weight):
+        self.weight = weight 
+    def get_weight(self):
+        return self.get_weight
+
+    def set_height(self,height):
+        self.height = height
+    def get_height(self):
+        return self.get_height
+
+    
 
     def custmer_add(self):
         print(f"your name is:{self.name} || Enter your height in cm: {self.height} || Enter your Weight in Kg:{self.weight}")
@@ -42,7 +59,7 @@ else:(Fore.RED + "enter valid details")
 
 
 
-food_list = {Fore.BLUE + "apple": 52, "banana": 89, "carrot": 45, "donut": 200,}
+food_list = {Fore.BLUE + "apple": 52, "banana": 89, "carrot": 45, "donut": 200, }
 def check_food(food):
 
     try:
@@ -74,7 +91,51 @@ while True:
 
 
 
+class Rmr_Calculatre(BMI_calculatre):
 
+    def __init__(self, name: str, weight : int, height : int, age : int, gender : str):
+        super().__init__(name, weight, height)
+        self.name = name
+        self.weight = weight
+        self.height = height
+        self.age = age
+        self.gender = gender
+
+    def set_age(self,age):
+        self.age = age    
+    def get_age(self):
+        return self.get_age
+
+    def set_gender(self,gender):
+        self.gender = gender    
+    def get_gender(self):
+        return self.get_gender
+
+
+    
+    def check_rmr(self):
+        gender_rteturn=0
+        try:
+            if self.gender == "male":
+                gender_rteturn=88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
+                return gender_rteturn
+            elif self.gender== "female":    
+
+                gender_rteturn= 447.593 + (9.247 * self.weight) + (3.098 * self.height) - (4.330 * self.age)
+                return gender_rteturn
+        except:
+            print("invalid gender. please enter 'male' or 'female'.")
+
+
+name = input("Enter your name: ")
+Height=float(input("Enter your height in cm: "))
+Weight=float(input("Enter your Weight in Kg: "))
+age = int(input("Enter your age in years: "))
+gender = input("Enter your gender (male or female):")
+ 
+
+rmr = Rmr_Calculatre(name, Weight, Height, age, gender)
+print("your resting metabolic rate is:", rmr.check_rmr() , "calories per day.")
 
 
 
