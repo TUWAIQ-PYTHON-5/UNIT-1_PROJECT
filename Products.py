@@ -20,6 +20,6 @@ class ProductCar:
         return f'total price :{ str(total)}  SAR\n your phone number :\n {self.phone_number} \nyour location :\n {self.location}' 
       
      except:
-           return "something went wrong please try again"
+           return "You have a mistake because you did not put anything in the basket"
 
  

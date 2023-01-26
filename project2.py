@@ -6,14 +6,20 @@ name = input("what is your name?")
 print("welcome ... to Glow Your Face ... " ,name)
 name_want =print("we are a makeup store that offers everything related to the face")
 answer = input("if you want to start shopping please type ?  (yes) if not  type (no) ")
+if answer == "no" :
+   print('Thanks for visiting our store')
+
+   exit()
+
+
 
 phone_number = input("please write your phone number ")
 print("Please complete your information")
 
-location = input("Please specify your location")
+location = input("Please specify your location ")
 
 
-Email = input("Enter your Email")
+Email = input("Enter your Email ")
 print("We are honored to have you in our store <3 ")
 
 
