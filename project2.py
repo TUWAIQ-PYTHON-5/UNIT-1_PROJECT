@@ -1,6 +1,6 @@
 import Products
 
-
+Thanku = lambda answer_category : f"Thanku {answer_category}"
 #information [ Glow Your Face ]
 name = input("what is your name?")
 print("welcome ... to Glow Your Face ... " ,name)
@@ -60,6 +60,8 @@ else :
        print(cartProducts)
        obj1 = Products.ProductCar(answer_category, cartProducts, phone_number,location)
        print(obj1.calculatePrice())
+       
+       print(Thanku ("you for your visit"))
        exit()
 
 
@@ -72,11 +74,15 @@ else :
      print(cartProducts)
      obj1 = Products.ProductCar(answer_category , cartProducts, phone_number,location)
      print(obj1.calculatePrice())
+     print(Thanku ("you for your visit"))
      exit()
 
 
 obj1 = Products.ProductCar(answer_category , cartProducts, phone_number,location)
 print(obj1.calculatePrice())
+#Use a Lambda function.
+
+
+
 
 exit()
-

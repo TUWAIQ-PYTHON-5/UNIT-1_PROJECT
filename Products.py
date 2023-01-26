@@ -17,10 +17,9 @@ class ProductCar:
         total = 0
         for cat in self.cart:
             total += products[cat]
-        return 'total price [' + str(total) +  'SAR]'
+        return f'total price :{ str(total)}  SAR\n your phone number :\n {self.phone_number} \nyour location :\n {self.location}' 
+      
      except:
            return "something went wrong please try again"
 
- #Use a Lambda function.
-Thanku = lambda answer_category : f"Thanku {answer_category}"
-print(Thanku ("you for your visit"))
+ 
