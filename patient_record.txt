@@ -1,0 +1,89 @@
+
+WELCOME TO HOSPITAL THE Patient data:
+  
+the name
+  
+ saad
+  
+the fmaily name
+  
+Alshahriy
+ 
+the ID number is
+ 
+12945654
+ 
+the kind is
+ 
+male
+ 
+the phone number is
+ 
+599231124
+ 
+WELCOME TO HOSPITAL THE Patient data:
+  
+the name
+  
+ mohammad
+  
+the fmaily name
+  
+Alqahatni
+ 
+the ID number is
+ 
+10234556
+ 
+the kind is
+ 
+male
+ 
+the phone number is
+ 
+504323115
+ 
+WELCOME TO HOSPITAL THE Patient data:
+  
+the name
+  
+ Noura
+  
+the fmaily name
+  
+Alshahrani
+ 
+the ID number is
+ 
+10384555
+ 
+the kind is
+ 
+fmale
+ 
+the phone number is
+ 
+564432223
+ 
+WELCOME TO HOSPITAL THE Patient data:
+  
+the name
+  
+ jana
+  
+the fmaily name
+  
+Alqahatni
+ 
+the ID number is
+ 
+234452456
+ 
+the kind is
+ 
+fmale
+ 
+the phone number is
+ 
+596232344
+ 
