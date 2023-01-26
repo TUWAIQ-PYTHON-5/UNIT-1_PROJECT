@@ -59,11 +59,11 @@ def work (usrAuthoringList:list,usrDesignList:list,usrName:str):
                 authorWork:str=input("Choose valid project name to Approve/Reject\n")
             authorDecision:str=""
             print("Type [A/a] to Approve the Design")
-            print("Type [R/r] to Approve the Design")
+            print("Type [R/r] to Reject the Design")
             authorDecision=input()
             while (authorDecision not in 'A,a,R,r'):
                 print("Type [A/a] to Approve the Design")
-                print("Type [R/r] to Approve the Design")
+                print("Type [R/r] to Reject the Design")
                 authorDecision=input()
             if(authorDecision in 'A,a'):
                 file = open("DoneProjects.txt", "a+", encoding="utf-8")
@@ -116,7 +116,7 @@ def work (usrAuthoringList:list,usrDesignList:list,usrName:str):
                 print("UNKNOWN USER, To register a new Employee Rerun the application")
                 print(usrList)
                 newProjectAuthor = input("Enter valid Author Name")
-            authorFile = open(newProjectAuthor+"Authoring.txt", "r+", encoding="utf-8")
+            authorFile = open(newProjectAuthor+"Authoring.txt", "a+", encoding="utf-8")
             authorFile.writelines([designerWork,"\n"])
             authorFile.seek(0)
             authorFile.close()
@@ -138,14 +138,14 @@ def work (usrAuthoringList:list,usrDesignList:list,usrName:str):
             print("Your Design is submited")
 
 def fChoise (usrChoise:int) -> str:
-    print("hi, in fChoise function")
+    #print("hi, in fChoise function")
     if (usrChoise == 1): return ("Login")
     elif(usrChoise== 2): return ("newProject")
     elif(usrChoise== 3): return ("addUser")
     else: print("Enter a valide Choise or [Ctrl + C] to exit")
 
 def logIn (usrFlagA:list, usrFlagD:list,newUser:str):
-    print("hi, in Login function")
+    #print("hi, in Login function")
     print("Hello ",newUser,"!")
     if (usrFlagA == []): 
         print(Back.GREEN), print(Fore.BLACK)
@@ -229,9 +229,9 @@ def projects(usrFlag: str):
 
         
         usrDesignerList:list =  [line.strip() for line in open(newProjectDesigner + "Designs.txt")]
-        usrAutherList:list =  [line.strip() for line in open(newProjectAuthor + "Authoring.txt")]
+        #usrAutherList:list =  [line.strip() for line in open(newProjectAuthor + "Authoring.txt")]
         print(usrDesignerList)
-        print(usrAutherList)
+        #print(usrAutherList)
         
 
         #designerDict[usrFlag] = usrDesignerList, print(designerDict)
@@ -253,7 +253,7 @@ def projects(usrFlag: str):
 try:
     print(Back.MAGENTA), print(Fore.WHITE)
     print("\033[1mPress [1] :\t if you Want to Login")# + Style.RESET_ALL)
-    print(Back.CYAN), print(Fore.BLACK)
+    print(Back.CYAN), print(Fore.WHITE)
     print("\033[1mPress [2] :\t if you Want to Open New Project")# + Style.RESET_ALL)
     print(Back.WHITE), print(Fore.BLUE)
     print("\033[1mPress [3] :\t if you Want to Add New User\n" + Style.RESET_ALL)
