@@ -73,7 +73,7 @@ while True:
                 print('Your total is $' + str(result))
                 print(cs("\tThanks for using Healthy food, Happy mood :D and come back again.", "Wheat", "White"))
 
-                print(cs("..We are glad you invested in yourself, keep going..", "Wheat", "White"))
+                print(cs("\t\t..We are glad you invested in yourself, keep going..", "Wheat", "White"))
                 break
 
         # If the user choose number 2
@@ -99,15 +99,13 @@ while True:
                 print('Selected item: ' + selected_menu.name ," : $ " , selected_menu.price)
                 
                 side_dish_index = int(input(underline('Enter another meal or drink :')))
-
-                side_dish_index = lambda x , y : selected_menu.price + side_dish.price
                 side_dish = menu_items[side_dish_index]
-                print(side_dish)
+                result = (selected_menu.price + side_dish.price) 
             
                 print('Your total is $' + str(result))
                 print(cs("\tThanks for using Healthy food, Happy mood :D and come back again.", "Wheat", "White"))
 
-                print(cs("..We are glad you invested in yourself, keep going..", "Wheat", "White"))
+                print(cs("\t\t..We are glad you invested in yourself, keep going..", "Wheat", "White"))
                 break
 
         # If the user choose number 3
@@ -138,7 +136,7 @@ while True:
                 print('Your total is $' + str(result))
                 print(cs("\tThanks for using Healthy food, Happy mood :D and come back again.", "Wheat", "White"))
 
-                print(cs("..We are glad you invested in yourself, keep going..", "Wheat", "White"))
+                print(cs("\t\t..We are glad you invested in yourself, keep going..", "Wheat", "White"))
                 break
 
         # If the user choose number 4
