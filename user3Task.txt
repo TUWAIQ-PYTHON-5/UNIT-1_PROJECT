@@ -1,1 +1,6 @@
-{"task_name": "go gim", "status": 0}
+{"task_name": "Make an excel file for bugs", "status": 0}
+{"task_name": "Update and test the font", "status": 0}
+{"task_name": "test the UX", "status": 0}
+{"task_name": "Test the Ui", "status": 0}
+{"task_name": " check the status of system file", "status": 0}
+{"task_name": "open new project file", "status": 0}

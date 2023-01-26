@@ -1,0 +1,6 @@
+{"task_name": "Test the GUI", "status": 40}
+{"task_name": "Test the API", "status": 0}
+{"task_name": "Find the bugs in pro1.txt", "status": 50}
+{"task_name": "test the pro1 file", "status": 0}
+{"task_name": "Test the Gui", "status": 0}
+{"task_name": "test the wibsite ", "status": 90}

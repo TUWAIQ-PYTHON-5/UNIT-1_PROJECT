@@ -20,16 +20,16 @@ def Welcome_page ():
 def login_info(): #1 اول عملية 
     user_login_name = input("Please Add Your Name :")
     user_login_password = int(input("Please Add Your Password :"))
-    x=0
+    x = 0
     for u in users_check:
      if  u.name.lower() == user_login_name and u.password == user_login_password :
-         print(cs( f"welcome {u.name}","Green"))
+         print(cs( f"welcome {u.name}","white","green"))
          x = 1 
          return u 
          
          break
     if x != 1:
-         print("SIR YOUR PASSWORD OR USERNAME IS WRONG , Plz enter Again") 
+         print(cs("SIR YOUR PASSWORD OR USERNAME IS WRONG , Plz enter Again","yellow", "Red")) 
          return None
 
 
@@ -37,7 +37,7 @@ def first_page_admin():
     for user in users_check:
         if user.privilege=="User":
          print(user.id ," - " ,user.name,"\n") 
-    chose_employee = int( input("Please enter the employee number : "))
+    chose_employee = int( input("Please enter the employee number : \n"))
     for emp in users_check:
         if emp.id == chose_employee :
 
@@ -45,7 +45,8 @@ def first_page_admin():
 
 
 
-def secund_page_admin(current_emp):
+def secund_page_admin(current_emp): #current employee is employee num 
+    print(" - Select the operation to be performed -")
     print( "\n1--To add task \n2--View task status \n3-- Back to Employee list")
     admin_choise = int( input())
     if admin_choise == 1 :
@@ -56,7 +57,7 @@ def secund_page_admin(current_emp):
          first_page_admin ()
 
 def add_new_task (current_emp):
-        type_in_item = input("Please write the task that you want to type ?")
+        type_in_item = input("Please write the task that you want to type :  ")
         file = open("user"+str(current_emp)+"Task.txt", "a", encoding="utf-8")
         task =Task(type_in_item,0)
         file.write(json.dumps(task.__dict__)+ "\n" ) 
@@ -73,8 +74,9 @@ def view_task(current_emp):
         for line in Lines:
             counter +=1 # يرقم لي التاسك
             y = json.loads(line)
-            print(str(counter)+" - " + y ['task_name'] + "     " + str(y['status']) )
+            print(str(counter)+" - " + y ['task_name'] + "     " + str(y['status'])+"%")
         file_read.close()
+        
     except:
         print(cs("file not found !!! 404 Or line not found 404","yellow", "#ff0000"))
 
@@ -90,7 +92,6 @@ def update_progress(id,line,progress):
         file_read.truncate()
         for l in Lines:
             file_read.write(l) 
-            print(cs("Task Updated successfully !!!","Green"))
         file_read.close()
         view_task(id)
     except:
@@ -100,20 +101,25 @@ Welcome_page()
 
 current_account=None
 while current_account==None:
-    current_account=login_info() # خل لي الكرنت اكاونت جواته قيمة المستخدم الي دخل 
+    current_account=login_info()  
 
 if current_account.privilege =="Admin": #2 ثاني عمليه
-            first_page_admin()
+    while input("press anything to continue and 0 to exit : ")!="0":
+         first_page_admin()
+    
+    else:
+        print(f"{cs('Thank You For Using Daily Task', 'yellow', 'grey').bold().underline()}")
 
 elif current_account.privilege == "User":#2 ثاني عمليه
-    while input("press anything to continue and 0 to exit : ")!="0":
-            print(bold("- your Daily Tasks - \n ").underline().cs("gold"))
+    while input("press anything to continue and 0 to exit : \n")!="0":
+            print(bold("- your Daily Tasks - ").underline().cs("yellow", "gray"))
             view_task(current_account.id)# ثالث داله تشتغل 
             task_line =int(input("please select task number to update progress: ")) #  بعد مايعرض بيرجع هنا
             progress_percentage =int(input("please select the percentage of progress: "))
+            print("")
             update_progress(current_account.id,task_line,progress_percentage) 
-
-
+    else:
+        print(f"{cs('Thank You For Using Daily Task', 'yellow', 'grey').bold().underline()}")
 
 
 
