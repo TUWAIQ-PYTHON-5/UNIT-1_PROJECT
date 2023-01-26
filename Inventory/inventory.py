@@ -109,6 +109,9 @@ class Service:
         try:
             item_New_name = ""
             item_name = input("Enter The name of item to edit : ")
+            # if item_name == " ":
+            #         print("Please check the entry ! ")
+            # else:
             newItemName = input("enter new name : ") 
             for _item in self.list_items:
                 if _item.getName() == item_name :
@@ -126,7 +129,7 @@ class Service:
             for item in self.list_items:    
                 if item.getQuantity() < 5:
                     print(cs(f"Name : {item.getName()} Quantity : {item.getQuantity()} ," " Exceeding the minimum stock ", "#ff0009"))
-                    self.send_pr()
+                    self.Display_Items()
 #-------------------------------------------Function to send (purchase request) from inventory to purchases        
 #        
     def purchase_requests(self)-> list:
