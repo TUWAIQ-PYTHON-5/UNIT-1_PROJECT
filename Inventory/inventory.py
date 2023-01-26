@@ -111,11 +111,8 @@ class Service:
             item_name = input("Enter The name of item to edit : ")
             newItemName = input("enter new name : ") 
             for _item in self.list_items:
-
                 if _item.getName() == item_name :
-
                     item_New_name = newItemName
-                    
                     _item.setName(item_New_name)
                     print(cs("Modified successfully ","#00d787"))
                     break
