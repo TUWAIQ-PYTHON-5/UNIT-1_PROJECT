@@ -1,6 +1,8 @@
 import classes_menu
 from colorama import Fore, Back, Style
 from art import *
+from stringcolor import * 
+
 
 def intro():
     title1=(Fore.BLUE + "Healthy food , Happy mood :D")
@@ -20,7 +22,7 @@ intro()
 # While for Error Handling :
 while True:
     try:
-        user_input = input(Back.CYAN +  Style.DIM +"\tWelcome to our resturant , please enter 1 to disply the menu :")
+        user_input = input(cs("\tWelcome to our resturant , please enter 1 to disply the menu :", "Wheat", "White"))
         user_input = int(user_input)
 
         while user_input != 4:
@@ -31,13 +33,13 @@ while True:
             print("\t2. Cutting diet")
             print("\t3. Bulking diet ")
             print("\t4. EXIT")
-            user_input = input("\tSelect what you want from (1-4), So let's start : ")
+            user_input = input(underline("\tSelect what you want from (1-4), So let's start : "))
         
         # If the user choose number 1
             if user_input == '1':
 
                 # Objects :
-                print("* Note : Keto diet : 1300 cal .")
+                print(cs("* Note : Keto diet : 1300 cal .", "red", "White"))
                 menu_item1 = classes_menu.keto('beef 200 g + rice 50g + 30 fat ', '433 Calories', 35)
                 menu_item2 = classes_menu.keto('salmon 200g + rice 50g +30 fat', '433 Calories', 40)
                 menu_item3 = classes_menu.keto('salmon 200g + salad + 30 fat ', '433 Calories', 30)
@@ -55,12 +57,12 @@ while True:
 
                 print('--------------------')
 
-                order = int(input('Enter menu item number: '))
+                order = int(input(underline('Enter menu item number: ')))
                 selected_menu = menu_items[order]
                 print('Selected item: ' + selected_menu.name ," : $ " , selected_menu.price)
 
                 # Receive input from user :
-                side_dish_index = int(input('Enter another meal or drink :'))
+                side_dish_index = int(input(underline('Enter another meal or drink :')))
 
                 # Sum two index from user : 
 
@@ -69,14 +71,15 @@ while True:
 
                 # Output 'Your total is $' :
                 print('Your total is $' + str(result))
-                print("\tThanks for using Healthy food, Happy mood :D and come back again.")
-                print("..We are glad you invested in yourself, keep going..")
+                print(cs("\tThanks for using Healthy food, Happy mood :D and come back again.", "Wheat", "White"))
+
+                print(cs("..We are glad you invested in yourself, keep going..", "Wheat", "White"))
                 break
 
         # If the user choose number 2
 
             elif user_input == '2':
-                print("* Note : Cutting diet : 1200 cal . ")
+                print(cs("* Note : Cutting diet : 1200 cal . ", "red", "White"))
                 menu_item1 = classes_menu.Cutting('chicken 150 g + rice 100 g + 5 fat ', '400 Calories ', 26)
                 menu_item2 = classes_menu.Cutting('chicken 150 g + Pasta 150 g + 3 fat', '400 Calories ', 20)
                 menu_item3 = classes_menu.Cutting('beef 150 g + rice 150 g + 3 fat ', ' 400 Calories', 30)
@@ -91,25 +94,26 @@ while True:
 
                 print('--------------------')
                 
-                order = int(input('Enter menu item number: '))
+                order = int(input(underline('Enter menu item number: ')))
                 selected_menu = menu_items[order]
                 print('Selected item: ' + selected_menu.name ," : $ " , selected_menu.price)
                 
-                side_dish_index = int(input('Enter another meal or drink :'))
+                side_dish_index = int(input(underline('Enter another meal or drink :')))
 
                 side_dish_index = lambda x , y : selected_menu.price + side_dish.price
                 side_dish = menu_items[side_dish_index]
                 print(side_dish)
             
                 print('Your total is $' + str(result))
-                print("\tThanks for using Healthy food, Happy mood :D and come back again.")
-                print("..We are glad you invested in yourself, keep going..")
+                print(cs("\tThanks for using Healthy food, Happy mood :D and come back again.", "Wheat", "White"))
+
+                print(cs("..We are glad you invested in yourself, keep going..", "Wheat", "White"))
                 break
 
         # If the user choose number 3
 
             elif user_input == '3':
-                print("* Note : Bulking diet : 1800 cal .")
+                print(cs("* Note : Bulking diet : 1800 cal .", "red", "White"))
                 menu_item1 = classes_menu.Bulking('chicken 200 g + rice 200 g + 5 fat ', '600 Calories', 26)
                 menu_item2 = classes_menu.Bulking('chicken 200g + Pasta 200 g +30 fat', '600 Calories', 40)
                 menu_item3 = classes_menu.Bulking('beef 200g + rice 200 g + 3 fat ', '600 Calories', 30)
@@ -123,23 +127,24 @@ while True:
                     index += 1
 
                 print('--------------------')
-                order = int(input('Enter menu item number: '))
+                order = int(input(underline('Enter menu item number: ')))
                 selected_menu = menu_items[order]
                 print('Selected item: ' + selected_menu.name ," : $ " , selected_menu.price)
 
-                side_dish_index = int(input('Enter another meal or drink :'))
+                side_dish_index = int(input(underline('Enter another meal or drink :')))
                 side_dish = menu_items[side_dish_index]
                 result = (selected_menu.price + side_dish.price) 
 
                 print('Your total is $' + str(result))
-                print("\tThanks for using Healthy food, Happy mood :D and come back again.")
-                print("..We are glad you invested in yourself, keep going..")
+                print(cs("\tThanks for using Healthy food, Happy mood :D and come back again.", "Wheat", "White"))
+
+                print(cs("..We are glad you invested in yourself, keep going..", "Wheat", "White"))
                 break
 
         # If the user choose number 4
 
             elif user_input == '4':
-                print("\tThanks for using Healthy food, Happy mood :D and come back again.")
+                print(cs("\tThanks for using Healthy food, Happy mood :D and come back again.", "Wheat", "White"))
             
             else:
                 print("Invalid choice")
