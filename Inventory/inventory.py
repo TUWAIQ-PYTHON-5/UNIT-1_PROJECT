@@ -79,8 +79,8 @@ class Service:
                     print()
                     x = x + 1
             except ValueError as e:
-                    print("Error The input value type is invalid" , e.__doc__)
-                    print("Failed to add ")
+                    print(cs("Error The input value type is invalid", "#ff0009") , e.__doc__)
+                    print(cs("Failed to add ", "#ff0009"))
                     print("-----------")
             if input_user == "n":
                     self.Display()
@@ -129,7 +129,7 @@ class Service:
             for item in self.list_items:    
                 if item.getQuantity() < 5:
                     print(cs(f"Name : {item.getName()} Quantity : {item.getQuantity()} ," " Exceeding the minimum stock ", "#ff0009"))
-                    self.Display_Items()
+                    self.purchase_requests()
 #-------------------------------------------Function to send (purchase request) from inventory to purchases        
 #        
     def purchase_requests(self)-> list:

@@ -37,33 +37,38 @@ class PurchaseOrder:
                         break           
             except ValueError:
                 print()
-                print(cs("input Error , must be integer between 1 to 5 !", "#ff0009"))
+                print(cs("input Error , must be integer between 1 to 4 !", "#ff0009"))
                 print()
 #-------------------------------------- function to display purchase requests sent from the store
     def Display_Purchaser_requests(self):
         #show_list = input("do you want to Display Purchase Requests ?  : ")
         #if show_list == 'y':
-        files = open('NewPR.txt' , 'r', encoding='utf-8') 
-        print(files.read())
-        files.close()
-        self.Receive_orders()
+        try:
+            files = open('NewPR.txt' , 'r', encoding='utf-8') 
+            print(files.read())
+            files.close()
+            self.Receive_orders()
+        except:
+            print(cs("Their is not requests", "#ff0009"))
 #----------------------------------- Function to display available providers
     def Display_providers(self):
-        print("Inventory Items =>")
-        if not self.provider_list:
-            print(cs("Their is not providers", "#ff0009"))
-            self.add()
-        else:
+        try:
+            if not self.provider_list:
+                print(cs("Their is not providers", "#ff0009"))
+                # self.add()
+        except Exception as e:
+            print(e.__doc__)
+        for _items in self.provider_list:
+            print(cs(f"Name : {_items.get_name()} | Emile : {_items.get_email()} | Phone : {_items.get_phone()}", "DeepPink3"))
             print()
-            for _items in self.provider_list:
-                print(cs(f"Name : {_items.get_name()} | Emile : {_items.get_email()} | Phone : {_items.get_phone()}", "DeepPink3"))
-                print()
-                self.Display()
+            # self.Display()
+
 #-------------------------------------function to creating providers and saving them in a file
     def Create_provider(self):
         x = 1 
         while True:
             try:
+                print("____________________")
                 input_user = input(cs("Do you want to Create Provider ? y or n : ", "#ffff87"))
             except Exception as e:
                 print(cs("Error The input value type is invalid", "#ff0009" , e.__doc__))
@@ -92,18 +97,24 @@ class PurchaseOrder:
         phone = ""
         try:
             while True:
-                user_input =input("Do you want confirm and send Purchase Order ? y or n : ")
+                user_input =input(cs("Do you want confirm and send Purchase Order ? y or n : ", "#ffff87"))
                 if user_input == 'y':
                     provider_name = input("Enter provider Name : ")
-                    new_po = input("Type new PO  : ")
                     for info in self.provider_list:
                         if info.get_name() ==  provider_name:
+                            new_po = input("Type new PO  : ")
                             email = info.get_email()
                             phone = info.get_phone()
                             file = open('NewPO.txt', 'a+' , encoding='utf-8')
                             file.write(f"Provider : {provider_name} - Emil : {email} - Phone : {phone} -> {new_po} \n")
                             file.close()
-                            print(cs("Send successfully ","#00d787"))
+                            print(cs("Send successfully ","#00d787"))  
+                        else:
+                            print(cs( "The name of the provider is not found. Please check the name ! ", "#ff0009" ))
+                    if not self.provider_list:
+                        print(cs( "Please add new provider  : ", "#ff0009" )) 
+                        self.Create_provider()    
+                        break    
                 elif user_input == 'n':
                     break
             self.Display()               
